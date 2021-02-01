@@ -2,7 +2,7 @@ import 'enums.dart';
 import 'matched_product.dart';
 
 /// Microsoft Edge user agent signature regex.
-final _edgeRegex = new RegExp(r'\sedg\/|edg([ea]|ios)', caseSensitive: false);
+final _edgeRegex = RegExp(r'\sedg\/|edg([ea]|ios)', caseSensitive: false);
 
 /// Represents a browser matched by the user agent.
 class Browser extends MatchedProduct<Browsers> {
