@@ -161,4 +161,13 @@ void main() {
     expect(detector.platform.type, Platforms.iOS);
     expect(detector.engine.type, Engines.webkit);
   });
+
+  // Unknown user agent
+  test('handles unknown user agents', () {
+    final detector = BrowserDetector('asdfasdf');
+
+    expect(detector.browser.type, Browsers.unknown);
+    expect(detector.platform.type, Platforms.unknown);
+    expect(detector.engine.type, Engines.unknown);
+  });
 }
