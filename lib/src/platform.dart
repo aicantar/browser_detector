@@ -18,6 +18,9 @@ class Platform extends MatchedProduct<Platforms> {
   /// True if the platform is Android.
   bool get isAndroid => type == Platforms.android;
 
+  /// True if the platform is unknown.
+  bool get isUnknown => type == Platforms.unknown;
+
   const Platform(Platforms type, UserAgentMatcherCallback matcherCallback)
       : super(type, matcherCallback);
 

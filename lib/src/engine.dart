@@ -12,6 +12,9 @@ class Engine extends MatchedProduct<Engines> {
   /// True if the engine is Webkit.
   bool get isWebkit => type == Engines.webkit;
 
+  /// True if the engine is unknown.
+  bool get isUnknown => type == Engines.unknown;
+
   const Engine(Engines type, UserAgentMatcherCallback matcherCallback)
       : super(type, matcherCallback);
 
