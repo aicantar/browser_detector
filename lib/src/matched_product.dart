@@ -14,5 +14,3 @@ abstract class MatchedProduct<T> {
     this.matcherCallback,
   );
 }
-
-class badClass {}
