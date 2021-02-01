@@ -20,7 +20,7 @@ Custom user agent string:
 import 'package:browser_detector/browser_detector.dart';
 
 final firefoxUserAgent = '...';
-print(BrowserDetector().browser.isFirefox); // true
+print(BrowserDetector(firefoxUserAgent).browser.isFirefox); // true
 ```
 
 Using with dependency injection/service locator libraries (GetIt example):
