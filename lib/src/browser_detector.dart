@@ -2,6 +2,7 @@ import 'package:browser_detector/src/environment/fake_native_user_agent.dart'
     if (dart.library.html) 'package:browser_detector/src/environment/native_user_agent.dart';
 
 import 'browser.dart';
+import 'engine.dart';
 import 'platform.dart';
 
 /// Detects browser, engine and platform the app is running on based on the user
@@ -25,17 +26,30 @@ class BrowserDetector {
     Android(),
   ];
 
+  /// Known engines.
+  Iterable<Engine> _engines = [
+    Blink(),
+    Gecko(),
+    WebKit(),
+  ];
+
   /// Private [Browser] instance.
   Browser _browser;
 
   /// Private [Platform] instance.
   Platform _platform;
 
+  /// Private [Engine] instance.
+  Engine _engine;
+
   /// Detected [Browser].
   Browser get browser => _browser;
 
   /// Detected [Platform].
   Platform get platform => _platform;
+
+  /// Detected [Engine].
+  Engine get engine => _engine;
 
   /// Construct a BrowserDetector. If the [userAgent] is passed, the detector
   /// will not retrieve the value from the environment and use the parameter
@@ -51,6 +65,11 @@ class BrowserDetector {
     _platform = _platforms.firstWhere(
       (platform) => platform.matcherCallback(actualUserAgent),
       orElse: () => Platform.unknown(),
+    );
+
+    _engine = _engines.firstWhere(
+      (engine) => engine.matcherCallback(actualUserAgent),
+      orElse: () => Engine.unknown(),
     );
   }
 }

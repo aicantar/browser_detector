@@ -12,6 +12,7 @@ void main() {
 
     expect(detector.browser.type, Browsers.chrome);
     expect(detector.platform.type, Platforms.windows);
+    expect(detector.engine.type, Engines.blink);
   });
 
   test('can detect Chrome on macOS', () {
@@ -19,6 +20,7 @@ void main() {
 
     expect(detector.browser.type, Browsers.chrome);
     expect(detector.platform.type, Platforms.macOS);
+    expect(detector.engine.type, Engines.blink);
   });
 
   test('can detect Chrome on Linux', () {
@@ -26,6 +28,7 @@ void main() {
 
     expect(detector.browser.type, Browsers.chrome);
     expect(detector.platform.type, Platforms.linux);
+    expect(detector.engine.type, Engines.blink);
   });
 
   test('can detect Chrome on Android', () {
@@ -33,6 +36,7 @@ void main() {
 
     expect(detector.browser.type, Browsers.chrome);
     expect(detector.platform.type, Platforms.android);
+    expect(detector.engine.type, Engines.blink);
   });
 
   test('can detect Chrome on iOS', () {
@@ -40,6 +44,15 @@ void main() {
 
     expect(detector.browser.type, Browsers.chrome);
     expect(detector.platform.type, Platforms.iOS);
+    expect(detector.engine.type, Engines.webkit);
+  });
+
+  test('can detect Chrome on iPadOS', () {
+    final detector = BrowserDetector(UserAgent.chromeIPadOS);
+
+    expect(detector.browser.type, Browsers.chrome);
+    expect(detector.platform.type, Platforms.iPadOS);
+    expect(detector.engine.type, Engines.webkit);
   });
 
   // Firefox
@@ -48,6 +61,7 @@ void main() {
 
     expect(detector.browser.type, Browsers.firefox);
     expect(detector.platform.type, Platforms.windows);
+    expect(detector.engine.type, Engines.gecko);
   });
 
   test('can detect Firefox on macOS', () {
@@ -55,6 +69,7 @@ void main() {
 
     expect(detector.browser.type, Browsers.firefox);
     expect(detector.platform.type, Platforms.macOS);
+    expect(detector.engine.type, Engines.gecko);
   });
 
   test('can detect Firefox on Linux', () {
@@ -62,6 +77,7 @@ void main() {
 
     expect(detector.browser.type, Browsers.firefox);
     expect(detector.platform.type, Platforms.linux);
+    expect(detector.engine.type, Engines.gecko);
   });
 
   test('can detect Firefox on Android', () {
@@ -69,6 +85,7 @@ void main() {
 
     expect(detector.browser.type, Browsers.firefox);
     expect(detector.platform.type, Platforms.android);
+    expect(detector.engine.type, Engines.gecko);
   });
 
   test('can detect Firefox on iOS', () {
@@ -76,6 +93,15 @@ void main() {
 
     expect(detector.browser.type, Browsers.firefox);
     expect(detector.platform.type, Platforms.iOS);
+    expect(detector.engine.type, Engines.webkit);
+  });
+
+  test('can detect Firefox on iPadOS', () {
+    final detector = BrowserDetector(UserAgent.firefoxIPadOS);
+
+    expect(detector.browser.type, Browsers.firefox);
+    expect(detector.platform.type, Platforms.iPadOS);
+    expect(detector.engine.type, Engines.webkit);
   });
 
   // Safari
@@ -84,6 +110,7 @@ void main() {
 
     expect(detector.browser.type, Browsers.safari);
     expect(detector.platform.type, Platforms.macOS);
+    expect(detector.engine.type, Engines.webkit);
   });
 
   test('can detect Safari on iOS', () {
@@ -91,6 +118,15 @@ void main() {
 
     expect(detector.browser.type, Browsers.safari);
     expect(detector.platform.type, Platforms.iOS);
+    expect(detector.engine.type, Engines.webkit);
+  });
+
+  test('can detect Safari on iPadOS', () {
+    final detector = BrowserDetector(UserAgent.safariIPadOS);
+
+    expect(detector.browser.type, Browsers.safari);
+    expect(detector.platform.type, Platforms.iPadOS);
+    expect(detector.engine.type, Engines.webkit);
   });
 
   // Edge
@@ -99,6 +135,7 @@ void main() {
 
     expect(detector.browser.type, Browsers.edge);
     expect(detector.platform.type, Platforms.windows);
+    expect(detector.engine.type, Engines.blink);
   });
 
   test('can detect Edge on macOS', () {
@@ -106,6 +143,7 @@ void main() {
 
     expect(detector.browser.type, Browsers.edge);
     expect(detector.platform.type, Platforms.macOS);
+    expect(detector.engine.type, Engines.blink);
   });
 
   test('can detect Edge on Android', () {
@@ -113,6 +151,7 @@ void main() {
 
     expect(detector.browser.type, Browsers.edge);
     expect(detector.platform.type, Platforms.android);
+    expect(detector.engine.type, Engines.blink);
   });
 
   test('can detect Edge on iOS', () {
@@ -120,13 +159,6 @@ void main() {
 
     expect(detector.browser.type, Browsers.edge);
     expect(detector.platform.type, Platforms.iOS);
-  });
-
-  /// iPadOS
-  test('can detect iPadOS', () {
-    final detector = BrowserDetector(UserAgent.firefoxIPadOS);
-
-    expect(detector.browser.type, Browsers.firefox);
-    expect(detector.platform.type, Platforms.iPadOS);
+    expect(detector.engine.type, Engines.webkit);
   });
 }
