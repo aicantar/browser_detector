@@ -21,13 +21,8 @@ class Browser extends MatchedProduct<Browsers> {
   /// True if the browser is unknown.
   bool get isUnknown => type == Browsers.unknown;
 
-  const Browser(
-    Browsers type,
-    UserAgentMatcherCallback matcherCallback,
-  ) : super(
-          type,
-          matcherCallback,
-        );
+  const Browser(Browsers type, UserAgentMatcherCallback matcherCallback)
+      : super(type, matcherCallback);
 
   /// Construct an unknown browser.
   const Browser.unknown() : super(Browsers.unknown, null);

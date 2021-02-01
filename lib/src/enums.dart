@@ -20,5 +20,7 @@ enum Platforms {
   windows,
   macOS,
   linux,
+  iOS,
+  android,
   unknown,
 }
