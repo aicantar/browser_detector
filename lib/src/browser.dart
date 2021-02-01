@@ -1,6 +1,9 @@
 import 'enums.dart';
 import 'matched_product.dart';
 
+/// Microsoft Edge user agent signature regex.
+final _edgeRegex = new RegExp(r'\sedg\/|edg([ea]|ios)', caseSensitive: false);
+
 /// Represents a browser matched by the user agent.
 class Browser extends MatchedProduct<Browsers> {
   /// True if the browser is Chrome.
@@ -35,10 +38,8 @@ class Chrome extends Browser {
   const Chrome() : super(Browsers.chrome, _matcherCallback);
 
   static bool _matcherCallback(String userAgent) {
-    return RegExp(
-      r'chrome|crios|crmo',
-      caseSensitive: false,
-    ).hasMatch(userAgent);
+    return !_edgeRegex.hasMatch(userAgent) &&
+        RegExp(r'chrome|crios|crmo', caseSensitive: false).hasMatch(userAgent);
   }
 }
 
@@ -56,7 +57,8 @@ class Safari extends Browser {
   Safari() : super(Browsers.safari, _matcherCallback);
 
   static bool _matcherCallback(String userAgent) {
-    return RegExp(r'safari', caseSensitive: false).hasMatch(userAgent);
+    return !_edgeRegex.hasMatch(userAgent) &&
+        RegExp(r'safari', caseSensitive: false).hasMatch(userAgent);
   }
 }
 
@@ -64,11 +66,7 @@ class Safari extends Browser {
 class Edge extends Browser {
   const Edge() : super(Browsers.edge, _matcherCallback);
 
-  // TODO: fix the matcher
   static bool _matcherCallback(String userAgent) {
-    return RegExp(
-      r'\sedg\/|edg([ea]|ios)',
-      caseSensitive: false,
-    ).hasMatch(userAgent);
+    return _edgeRegex.hasMatch(userAgent);
   }
 }

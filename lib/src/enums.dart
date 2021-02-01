@@ -12,7 +12,6 @@ enum Engines {
   blink,
   gecko,
   webkit,
-  edgeHTML,
   unknown,
 }
 
@@ -21,6 +20,5 @@ enum Platforms {
   windows,
   macOS,
   linux,
-  unix,
   unknown,
 }
