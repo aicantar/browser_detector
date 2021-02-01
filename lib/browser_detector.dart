@@ -26,6 +26,7 @@ class BrowserDetector {
     MacOS(),
     Linux(),
     IOS(),
+    IPadOS(),
     Android(),
   ];
 

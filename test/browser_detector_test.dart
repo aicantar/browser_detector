@@ -121,4 +121,12 @@ void main() {
     expect(detector.browser.type, Browsers.edge);
     expect(detector.platform.type, Platforms.iOS);
   });
+
+  /// iPadOS
+  test('can detect iPadOS', () {
+    final detector = BrowserDetector(UserAgent.firefoxIPadOS);
+
+    expect(detector.browser.type, Browsers.firefox);
+    expect(detector.platform.type, Platforms.iPadOS);
+  });
 }

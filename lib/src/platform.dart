@@ -58,8 +58,17 @@ class IOS extends Platform {
   const IOS() : super(Platforms.iOS, _matcherCallback);
 
   static bool _matcherCallback(String userAgent) {
-    return RegExp(r'iphone|ipad|ipod', caseSensitive: false)
-        .hasMatch(userAgent);
+    return RegExp(r'iphone|ipod', caseSensitive: false).hasMatch(userAgent);
+  }
+}
+
+/// Apple iPadOS.
+class IPadOS extends Platform {
+  const IPadOS() : super(Platforms.iPadOS, _matcherCallback);
+
+  static bool _matcherCallback(String userAgent) {
+    return RegExp(r'ipad', caseSensitive: false).hasMatch(userAgent) &&
+        RegExp(r'cpu os', caseSensitive: false).hasMatch(userAgent);
   }
 }
 

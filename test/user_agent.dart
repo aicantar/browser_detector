@@ -39,4 +39,8 @@ class UserAgent {
       'Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 EdgiOS/45.12.0 Mobile/15E148 Safari/605.1.15';
   static const edgeAndroid =
       'Mozilla/5.0 (Linux; Android 10; Pixel 3 XL) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Mobile Safari/537.36 EdgA/45.12.4.5121';
+
+  // iPadOS
+  static const firefoxIPadOS =
+      'Mozilla/5.0 (iPad; CPU OS 11_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/30.0 Mobile/15E148 Safari/605.1.15';
 }
