@@ -1,3 +1,6 @@
+### 2.0.0
+* Release stable null-safe version.
+
 ### 2.0.0-nullsafety.0
 * Support null safety.
 
