@@ -21,8 +21,7 @@ class Browser extends MatchedProduct<Browsers> {
   /// True if the browser is unknown.
   bool get isUnknown => type == Browsers.unknown;
 
-  const Browser(Browsers type, UserAgentMatcherCallback matcherCallback)
-      : super(type, matcherCallback);
+  const Browser(Browsers type, UserAgentMatcherCallback matcherCallback) : super(type, matcherCallback);
 
   /// Construct an unknown browser.
   const Browser.unknown() : super(Browsers.unknown, null);
@@ -33,8 +32,7 @@ class Chrome extends Browser {
   const Chrome() : super(Browsers.chrome, _matcherCallback);
 
   static bool _matcherCallback(String userAgent) {
-    return !_edgeRegex.hasMatch(userAgent) &&
-        RegExp(r'chrome|crios|crmo', caseSensitive: false).hasMatch(userAgent);
+    return !_edgeRegex.hasMatch(userAgent) && RegExp(r'chrome|crios|crmo', caseSensitive: false).hasMatch(userAgent);
   }
 }
 
@@ -52,8 +50,7 @@ class Safari extends Browser {
   Safari() : super(Browsers.safari, _matcherCallback);
 
   static bool _matcherCallback(String userAgent) {
-    return !_edgeRegex.hasMatch(userAgent) &&
-        RegExp(r'safari', caseSensitive: false).hasMatch(userAgent);
+    return !_edgeRegex.hasMatch(userAgent) && RegExp(r'safari', caseSensitive: false).hasMatch(userAgent);
   }
 }
 

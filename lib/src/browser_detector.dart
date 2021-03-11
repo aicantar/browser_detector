@@ -34,13 +34,13 @@ class BrowserDetector {
   ];
 
   /// Private [Browser] instance.
-  Browser _browser;
+  late final Browser _browser;
 
   /// Private [Platform] instance.
-  Platform _platform;
+  late final Platform _platform;
 
   /// Private [Engine] instance.
-  Engine _engine;
+  late final Engine _engine;
 
   /// Detected [Browser].
   Browser get browser => _browser;
@@ -54,21 +54,21 @@ class BrowserDetector {
   /// Construct a BrowserDetector. If the [userAgent] is passed, the detector
   /// will not retrieve the value from the environment and use the parameter
   /// instead.
-  BrowserDetector([String userAgent]) {
+  BrowserDetector([String? userAgent]) {
     final actualUserAgent = userAgent ?? nativeUserAgent;
 
     _browser = _browsers.firstWhere(
-      (browser) => browser.matcherCallback(actualUserAgent),
+      (browser) => browser.matcherCallback?.call(actualUserAgent) ?? false,
       orElse: () => Browser.unknown(),
     );
 
     _platform = _platforms.firstWhere(
-      (platform) => platform.matcherCallback(actualUserAgent),
+      (platform) => platform.matcherCallback?.call(actualUserAgent) ?? false,
       orElse: () => Platform.unknown(),
     );
 
     _engine = _engines.firstWhere(
-      (engine) => engine.matcherCallback(actualUserAgent),
+      (engine) => engine.matcherCallback?.call(actualUserAgent) ?? false,
       orElse: () => Engine.unknown(),
     );
   }
