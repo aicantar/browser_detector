@@ -1,5 +1,7 @@
 # browser_detector
 
+[![Dart](https://github.com/aicantar/browser_detector/actions/workflows/dart.yml/badge.svg)](https://github.com/aicantar/browser_detector/actions/workflows/dart.yml?query=branch%3Amaster)
+
 Dart browser detector library. Detects popular browsers, engines and platforms by analyzing the user agent string. Safe to use with Flutter Native.
 
 ## Usage
