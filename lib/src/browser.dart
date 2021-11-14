@@ -51,7 +51,7 @@ class Firefox extends Browser {
 
 /// Apple Safari.
 class Safari extends Browser {
-  Safari() : super(Browsers.safari, _matcherCallback);
+  const Safari() : super(Browsers.safari, _matcherCallback);
 
   static bool _matcherCallback(String userAgent) {
     return !_edgeRegex.hasMatch(userAgent) &&
