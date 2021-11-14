@@ -9,7 +9,7 @@ import 'platform.dart';
 /// agent string.
 class BrowserDetector {
   /// Known browsers.
-  Iterable<Browser> _browsers = [
+  static const Iterable<Browser> _browsers = [
     Chrome(),
     Firefox(),
     Safari(),
@@ -17,7 +17,7 @@ class BrowserDetector {
   ];
 
   /// Known platofrms.
-  Iterable<Platform> _platforms = [
+  static const Iterable<Platform> _platforms = [
     Windows(),
     MacOS(),
     Linux(),
@@ -27,7 +27,7 @@ class BrowserDetector {
   ];
 
   /// Known engines.
-  Iterable<Engine> _engines = [
+  static const Iterable<Engine> _engines = [
     Blink(),
     Gecko(),
     WebKit(),
